@@ -7,8 +7,6 @@
 * _Method_: 
     * Seattle crimes .csv file available before class begins. Students arrive with dataset stored locally.
     * On the whiteboard we write out 3 simple questions to explore the data:
-        * what is blah blah
-        * what is blah blah
     * We ask the students how they would begin to answer these questions with what they know now. We do not provide any instructions on software or how to accomplish this. We ask students to sketch out ideas, not try to answer the specific questions but focus on HOW to step through the process.
     * We give students 1 minute to explore on their own, 2 minutes in groups of 2, 4 minutes in groups of 4, then report out, with ideas written on whiteboard. Anthony/Valentina moderate.
 * _Purpose_:
