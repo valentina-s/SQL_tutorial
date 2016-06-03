@@ -1,0 +1,41 @@
+1) Create an .sql query which defines the structure of the table
+
+In practice use csvkit to extract the table structure from the cdv file:
+https://csvkit.readthedocs.org/en/0.9.1/
+csvsql --dialect mysql file.csv table.sql
+(it is always good to check whether the variable types look ok)
+I am attaching the query for one of my tables: 
+
+census.sql
+
+CREATE TABLE census (
+	`County Name` VARCHAR(11) NOT NULL, 
+	`Census Tract` VARCHAR(19) NOT NULL, 
+	`Total Population, 2010` float NOT NULL, 
+	`Population Density (Persons / Square Mile), 2010` FLOAT, 
+	`Total Housing Units, 2010` INTEGER NOT NULL, 
+	`Occupied Housing Units, 2010` INTEGER NOT NULL, 
+	`Vacant Housing Units, 2010` INTEGER NOT NULL, 
+	`Occupancy Rate (%%), 2010` FLOAT, 
+	`Vacancy Rate (%%), 2010` FLOAT, 
+	`Land Area (Square Miles), 2010` FLOAT NOT NULL, 
+	`Total Area (Square Miles), 2010` FLOAT NOT NULL, 
+	`Water Area (%%), 2010` FLOAT NOT NULL, 
+	`Geoid` BIGINT NOT NULL
+);
+
+
+Attached Message Part
+
+
+2) I insert  this table to my database form the command line:
+
+mysql -u username -h dbval.ckai3skfcwbv.us-west-2.rds.amazonaws.com -P 3306 -p SQL_tutorial < table.sql
+
+3) I connect to the database with a local option (so that I can reach my file):
+
+mysql --local-infile -u username -h dbval.ckai3skfcwbv.us-west-2.rds.amazonaws.com -P 3306 -p
+
+4) From inside mysql I run:
+
+load data local in file 'file.csv' into table table fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 rows
