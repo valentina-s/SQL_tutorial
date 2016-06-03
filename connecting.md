@@ -5,7 +5,5 @@ First we will download a software package that allows us to interface with the d
 * [click here](https://www.pgadmin.org/download/) to download the pg_admin software
 * run pg_admin
 
-Next 
-
-![](images/connection.png =100x100)
+<img src="images/connection.png" width="400"> 
       
