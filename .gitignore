@@ -4,3 +4,8 @@
 *.xlsx
 *.docx
 *-checkpoint.ipynb
+*.pptx
+*.~pptx
+*.sln
+*.config
+*.suo
