@@ -3,11 +3,11 @@
 #### Download software
 We will use the [pgAdmin](https://www.pgadmin.org/download/) software to connect to the database.
 
-* Windows - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/win32/) and download pgadmin3-1.22.1.zip to install the application.
+* Windows - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/win32/) and download pgadmin3-1.22.1.zip to install the application
 
-* Mac OSX - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/osx/) and download the file pgadmin3-1.22.1.dmg to install the application.
+* Mac OSX - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/osx/) and download the file pgadmin3-1.22.1.dmg to install the application
 
-* run pgAdmin
+Start pgAdmin.
 
 #### Connect to the database
 
