@@ -21,7 +21,7 @@
     * Others will think right away about writing code. We can briefly explore with them what this might look like. 
     * Some students may wonder what the "X" means in some of the columns, in general what do the different column names mean? We can use this to illustrate challenges in working with these kinds of statistics. It is very common to that we lack metadata, that null values are not treated correctly, that the data are not normalized or consistent. 
 
-#### Database Lecture: 20 minutes
+#### Database Lecture 1: 20 minutes
 
 * _Content_: 
     * What is a database? 
@@ -37,8 +37,22 @@
     * Structured Query Language (SQL):
         * standard language for relational databases
         * across different databases the core syntax is similar but there are small differences in some function names
-        * structure of a SQL statement: 
-```sql
-SELECT * FROM foo
-``` 
+        * structure of a SQL statement, some example table creations and selections using the crimes database
+    * Database implementations:
+        * multiple software packages (list examples); many commercial vendors 
+        * open source options are improving rapidly
+        * databases usually reside on a server but can be deployed locally for testing
+        * either way: connecting to a database is done via a connection string (show format)
+        * interface: GUI, command line, embedded in scripts
+
+#### Exercise Set 1: 20 minutes
+
+* _Purpose_: 
+    * students gain direct experience in connecting to database and running simple queries
+ 
+#### Database Lecture 2: 15 minutes
+
+*_Purpose_:
+    * explore implementation of more complex analysis methods (JOINS and GROUP BYs)
+
         
