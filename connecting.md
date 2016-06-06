@@ -1,9 +1,13 @@
 ## Steps for connecting to the DSSG tutorial database
 
 #### Download software
+We will use the [pgAdmin](https://www.pgadmin.org/download/) software to connect to the database.
 
-* [click here](https://www.pgadmin.org/download/) to download the pg_admin software
-* run pg_admin
+* Windows - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/win32/) and download pgadmin3-1.22.1.zip to install the application.
+
+* Mac OSX - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/osx/) and download the file pgadmin3-1.22.1.dmg to install the application.
+
+* run pgAdmin
 
 #### Connect to the database
 
@@ -24,3 +28,4 @@
 <img src="images/fullView.png" width = "600" border = "1">
 <br><br><br><br>
 
+pgadmin3-1.22.1.zip
