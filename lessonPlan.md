@@ -55,4 +55,22 @@
 *_Purpose_:
     * explore implementation of more complex analysis methods (JOINS and GROUP BYs)
 
-        
+#### Exercise Set 2: 30 minutes
+
+* _Purpose_: 
+    * students dig into more complex methods and have to come up with their own queries to answer questions
+
+#### Geospatial Lecture: 20 minutes
+* _Content_:
+    * intro to mapping, coordinate systems, 3 types of vector data
+    * how location is encoded in a database; GIS as a front end to a relational database with geospatial encoding
+    * a new data type: geometry
+    * implementation: in PostgreSQL, a simple extension called "PostGIS"
+         * how to build a geometry from lat/long
+         * a few spatial query functions in PostGIS (ST_Contains, ST_
+    * intro to other implementations (Tableau, etc)
+    * common misconceptions with spatial data: geographic coordinates cannot just be subtracted: concept of spherical versus projected data
+
+#### Exercise Set 3: Exploring geospatial concepts
+* _Purpose_:
+     * students include spatial queries 
