@@ -37,7 +37,8 @@ Start pgAdmin.
 <img src="images/viewingData.png" width = "400" border = "10">
 <br>
 A new window should appear allowing you to browse through some of the data. Take some time to become familiar with the contents of the table.
-
+<br>
+6. For future reference, these instructions are also summarized on [this AWS tutorial page](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html) 
 
 ## Step 2: Issuing your first query
 
