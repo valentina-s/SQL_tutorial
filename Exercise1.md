@@ -11,6 +11,8 @@ We will use the [pgAdmin](https://www.pgadmin.org/download/) software to connect
 
 * Mac OSX - [click here](https://www.postgresql.org/ftp/pgadmin3/release/v1.22.1/osx/) and download the file pgadmin3-1.22.1.dmg to install the application
 
+* Linux - sudo apt-get install pgadmin3
+
 Start pgAdmin.
 
 #### Connect to the database
