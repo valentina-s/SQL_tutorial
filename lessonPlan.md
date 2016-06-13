@@ -4,7 +4,7 @@
 
 #### Data exploration: 15 minutes
 
-* _Method_: 
+* _Method_:
     * Seattle crimes .csv file available before class begins. Students arrive with dataset stored locally.
     * On the whiteboard we write out 3 simple questions to explore the data:
     * We ask the students how they would begin to answer these questions with what they know now. We do not provide any instructions on software or how to accomplish this. We ask students to sketch out ideas, not try to answer the specific questions but focus on HOW to step through the process.
@@ -18,18 +18,18 @@
     * Students don't understand the purpose and don't come up with ideas. We can feed some ideas to start the conversation if this happens.
 * _Possible Outcomes_:
     * It's likely students will load the data into a spreadsheet. They might manually group cells, sort the data, make simple plots and may realize this is time consuming.
-    * Others will think right away about writing code. We can briefly explore with them what this might look like. 
-    * Some students may wonder what the "X" means in some of the columns, in general what do the different column names mean? We can use this to illustrate challenges in working with these kinds of statistics. It is very common to that we lack metadata, that null values are not treated correctly, that the data are not normalized or consistent. 
+    * Others will think right away about writing code. We can briefly explore with them what this might look like.
+    * Some students may wonder what the "X" means in some of the columns, in general what do the different column names mean? We can use this to illustrate challenges in working with these kinds of statistics. It is very common to that we lack metadata, that null values are not treated correctly, that the data are not normalized or consistent.
 
 #### Database Lecture 1: 20 minutes
 
-* _Content_: 
-    * What is a database? 
+* _Content_:
+    * What is a database?
         * software system for storing and analyzing data that exist row/column format
         * there are numerous flavors of databases, but we will focus on Relational Database Systems
     * Motivation for using a database
         * fast searching
-        * powerful methods for performing analysis on groups of data 
+        * powerful methods for performing analysis on groups of data
         * capability of joining information between datasets
         * data types have unique functionality (e.g. dates are not just integers but have methods related to year, month, day)
         * centralized repository, minimizes duplication, controlled access across multiple users
@@ -39,7 +39,7 @@
         * across different databases the core syntax is similar but there are small differences in some function names
         * structure of a SQL statement, some example table creations and selections using the crimes database
     * Database implementations:
-        * multiple software packages (list examples); many commercial vendors 
+        * multiple software packages (list examples); many commercial vendors
         * open source options are improving rapidly
         * databases usually reside on a server but can be deployed locally for testing
         * either way: connecting to a database is done via a connection string (show format)
@@ -47,17 +47,37 @@
 
 #### Exercise Set 1: 20 minutes
 
-* _Purpose_: 
+* _Purpose_:
     * students gain direct experience in connecting to database and running simple queries
- 
-#### Database Lecture 2: 15 minutes
 
-*_Purpose_:
-    * explore implementation of more complex analysis methods (JOINS and GROUP BYs)
+#### Database Lecture 2: ?? minutes (Valentina)
 
-#### Exercise Set 2: 30 minutes
+* _Purpose_: learn basic queries to manipulate a table
+   * selecting columns and rows from a table
+   * applying scalar and aggregate functions to a table
+* _Method_:
+* We step through queries in [SQL_tutorial.sql](SQL_tutorial.sql) - run them in pgadmin and discuss output
 
-* _Purpose_: 
+#### Exercise Set 2: ?? minutes
+* _Purpose_:
+  * Students practice basic queries by answering questions about the dataset.
+  * They are provided with a [cheat sheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) of the most common SQL commands
+* _Poteential Challenges:
+  * there are crimes from older years
+  * type of crimes may refer to all types of offenses or only summarized offenses
+
+
+
+#### Database Lecture 3: 15 minutes
+
+* _Purpose_:
+    * learn to work with two tables (JOINS)
+      * identify a common key on which to join the tables
+      * do preprocessing to match the keys
+
+#### Exercise Set 3: 30 minutes
+
+* _Purpose_:
     * students dig into more complex methods and have to come up with their own queries to answer questions
 
 #### Geospatial Lecture: 20 minutes
@@ -73,4 +93,4 @@
 
 #### Exercise Set 3: Exploring geospatial concepts
 * _Purpose_:
-     * students include spatial queries 
+     * students include spatial queries
