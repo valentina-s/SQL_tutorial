@@ -10,4 +10,4 @@
 * Lab exercises:
     * [Exercise 1](Exercise1.md)
     * [Exercise 2](Exercise2.md)
-    
+    * [Exercise 3](Exercise3.md)

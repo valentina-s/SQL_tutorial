@@ -62,7 +62,7 @@
 * _Purpose_:
   * Students practice basic queries by answering questions about the dataset.
   * They are provided with a [cheat sheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) of the most common SQL commands
-* _Poteential Challenges:
+* _Potential Challenges:
   * there are crimes from older years
   * type of crimes may refer to all types of offenses or only summarized offenses
 
