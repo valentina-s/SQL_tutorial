@@ -21,7 +21,11 @@ Start pgAdmin.
 <br><br>
 <img src="images/toolbar.png" width = "400" border = "10">
 <br><br><br><br>
-2. fill in the connection information. The password is: dssg2016
+2. fill in the connection information. 
+* The host name is: dssg2016.c5k9fqonks28.us-east-1.rds.amazonaws.com 
+* The port is: 5432
+* The username is: awsdssg
+* The password is: dssg2016
 <br><br>
 <img src="images/connection.PNG" width="400"> 
 <br><br><br><br>
@@ -59,10 +63,12 @@ The upper pane is where we will issue our query, and the results of the query wi
 3. Submit your first query by typing the following into the SQL pane:
 <br><br>
 ```sql
-SELECT COUNT(*) FROM seattlecrimeincidents;
+SELECT * FROM seattlecrimeincidents LIMIT 100;
 ```
 <br><br>
-__QUESTION__: What information did this query return?
+__NOTE:__ The "LIMIT" command restricts the database to return only the first 100 rows.
+<br>
+* the "*" is a wildcard requesting all columns from the database. 
 <br><br>
 4. Try to write a query to answer our first question from our data exploration effort with the original .csv file:
 _How many "TRESPASS" offenses occurred in total?_
