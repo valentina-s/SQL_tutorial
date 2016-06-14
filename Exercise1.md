@@ -24,7 +24,7 @@ Start pgAdmin.
 2. fill in the connection information. 
 * The host name is: dssg2016.c5k9fqonks28.us-east-1.rds.amazonaws.com 
 * The port is: 5432
-* The username is: awsdssg
+* The username is: dssg_student
 * The password is: dssg2016
 <br><br>
 <img src="images/connection.PNG" width="400"> 
