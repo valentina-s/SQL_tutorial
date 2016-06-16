@@ -65,17 +65,40 @@ The upper pane is where we will issue our query, and the results of the query wi
 ```sql
 SELECT * FROM seattlecrimeincidents LIMIT 100;
 ```
+
 <br><br>
 __NOTE:__ The "LIMIT" command restricts the database to return only the first 100 rows.
 <br>
 * the "*" is a wildcard requesting all columns from the database. 
 <br><br>
+
+We can apply the count function to all the columns:
+<br><br>
+```sql
+SELECT count(*) FROM seattlecrimeincidents LIMIT 100;
+```
+<br><br>
+
+This gives us the number of the rows in the table.
+
 4. Try to write a query to answer our first question from our data exploration effort with the original .csv file:
 _How many "TRESPASS" offenses occurred in total?_
-Here's a hint to get you started. (the < > indicate you must fill in the appropriate variable or SQL command).
+Here's a hint to get you started. (substitude < > with the appropriate variable or SQL command).
 ```sql
 SELECT < > FROM seattlecrimeincidents WHERE < > = < > 
 ```
+
+5. Can you obtain the range of the latitude and longitude coordinates of all crimes? 
+
+Hint: use "max" and "min" functions.
+
+Extra. Combine a few conditions together:
+_What is the number of bike thefts in the month of january?_
+
+You can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
+
+
+
  
 
 
