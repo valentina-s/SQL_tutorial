@@ -37,6 +37,9 @@ Create the point geometry using a geographic coordinate system (SRID = 4326). Tr
      * click on "database\DBmanager" and you will see the database you which you have already connected.
      * issue a SQL query in the SQL command window (blue arrow in this screen capture):
 <img src = "images/dbmanager.png" width = 600>
+   * try to make a map like this!
+<img src = "images/crimeradius.png" width = 600>
+
  
 #### Interfacing with the database from Python:
 
