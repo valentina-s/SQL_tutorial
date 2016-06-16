@@ -46,7 +46,7 @@ A new window should appear allowing you to browse through some of the data. Take
 <br>
 6. For future reference, these instructions are also summarized on [this AWS tutorial page](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ConnectToPostgreSQLInstance.html) 
 
-## Step 2: Issuing your first query
+## Step 2: Issuing your first queries
 
 * Queries can be issued to the database in many different ways. Here we'll use the SQL query window in pg_admin. This is a great way to test out ideas before implementing your SQL queries in a script.
 <br>
@@ -81,18 +81,19 @@ SELECT count(*) FROM seattlecrimeincidents LIMIT 100;
 
 This gives us the number of the rows in the table.
 
-4. Try to write a query to answer our first question from our data exploration effort with the original .csv file:
+
+## Step 3: Practice problems
+1. Try to write a query to answer our first question from our data exploration effort with the original .csv file:
 _How many "TRESPASS" offenses occurred in total?_
 Here's a hint to get you started. (substitude < > with the appropriate variable or SQL command).
 ```sql
 SELECT < > FROM seattlecrimeincidents WHERE < > = < > 
 ```
-
-5. Can you obtain the range of the latitude and longitude coordinates of all crimes? 
+2. Can you obtain the range of the latitude and longitude coordinates of all crimes? 
 
 Hint: use "max" and "min" functions.
 
-Extra. Combine a few conditions together:
+3. Extra. Combine a few conditions together:
 _What is the number of bike thefts in the month of january?_
 
 You can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
