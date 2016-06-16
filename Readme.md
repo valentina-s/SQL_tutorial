@@ -4,10 +4,10 @@
 
 #### Content
 
-* for the instructors: [lesson plan](lessonPlan.md)
-* the [2015 csv data](SeattleCrimeIncidents.csv) from last year. (If there's time I'll ingest the current 2016 data).         
+* the [2015 csv data](SeattleCrimeIncidents.csv) from last year.         
 * tutorial [slide deck](SQLTutorial.ipynb) for the lecture in notebook format using Reveal.js
 * Lab exercises:
     * [Exercise 1](Exercise1.md)
     * [Exercise 2](Exercise2.md)
     * [Exercise 3](Exercise3.md)
+    * [Exercise 4](Exercise4.md)
