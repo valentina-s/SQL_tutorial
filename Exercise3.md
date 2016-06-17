@@ -7,13 +7,22 @@ We have all already calculated the number of crimes in each census tract:
 SELECT "census tract 2000",count(*) FROM seattlecrimeincidents group by "census tract 2000"
 ```
 
-But we are interested in the crime *rate*, i.e. we want to normalize the rate by the population of each tract.
+But we are interested in the crime *rate*, i.e. we want to normalize by the population of each tract.
 
 For need to use additional information from the census table.
 
 * Write a query which displays the population for each tract
 
-Now we have two tables: one with census tract and # of crimes and one with census tract and population.
+Now we have two tables: one with census tract and crime count and one with census tract and population.
+
+|census tract 2000|crime_count|
+|-----------------|-----------|
+|                 |           | 
+
+|Census Tract|Population|
+|------------|----------|
+|            |          | 
+
 
 * Discuss with your neighbor how can combine those two tables to create a new table with columns: census, crime_count, crime_rate
 * Are there any issues you are encountering?
@@ -22,7 +31,7 @@ Now we have two tables: one with census tract and # of crimes and one with censu
 Let's write the final query let's write the final query 
 
 ```sql
-select <>, <> from 
+SELECT <>, <> FROM 
 	(<>) as crimeTable,
     (<>) as censusTable
     where crimeTable.CT = censusTable.CT;
