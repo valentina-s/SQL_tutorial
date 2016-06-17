@@ -66,3 +66,12 @@ Now we can issue a query to the database as follows:
 ```Python
 df =pd.read_sql('SELECT * FROM seattlecrimeincidents LIMIT 100', engine)
 ```
+
+#### Interfacing with the database from R
+
+We will use the R package [sqldf](https://cran.r-project.org/web/packages/sqldf/index.html).
+
+```R
+install.packages("sqldf")
+library(sqldf)
+```
