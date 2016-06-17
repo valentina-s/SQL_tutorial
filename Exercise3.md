@@ -24,7 +24,13 @@ Now we have two tables: one with census tract and crime count and one with censu
 |            |          | 
 
 
-* Discuss with your neighbor how can combine those two tables to create a new table with columns: census, crime_count, crime_rate
+* Discuss with your neighbor how we can combine those two tables to create a new table with columns: census tract, crime_rate
+
+|Census Tract|Crime_rate|
+|------------|----------|
+|            |          | 
+|            |          |
+
 * Are there any issues you are encountering?
 * How can you fix them?
 
