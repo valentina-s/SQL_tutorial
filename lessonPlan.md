@@ -48,37 +48,40 @@
 #### Exercise Set 1: 20 minutes
 
 * _Purpose_:
-    * students gain direct experience in connecting to database and running simple queries
-
-#### Database Lecture 2: ?? minutes (Valentina)
-
-* _Purpose_: learn basic queries to manipulate a table
-   * selecting columns and rows from a table
-   * applying scalar and aggregate functions to a table
+    * students gain direct experience in connecting to database
+    * students get introduction to the pgadmin inerface and learn to run simple queries
+    * students learn to create own queries to answer relevant questions
+    
 * _Method_:
-* We step through queries in [SQL_tutorial.sql](SQL_tutorial.sql) - run them in pgadmin and discuss output
+    * instructors show the pgadmin interface and run a simple command - students repeat by following instructions in [Exercise 1] (Exercise1.md) 
+    * students answer the practice questions using a [cheat sheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) and lecture notes
+
+
 
 #### Exercise Set 2: ?? minutes
 * _Purpose_:
-  * Students practice basic queries by answering questions about the dataset.
-  * They are provided with a [cheat sheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) of the most common SQL commands
+  * Students practice grouping queries
+* _Method_: 
+   *  answer questions in [Exercise 2](Exercise2.md)
+   
 * _Potential Challenges:
   * there are crimes from older years
   * type of crimes may refer to all types of offenses or only summarized offenses
 
 
 
-#### Database Lecture 3: 15 minutes
+#### Discussion: 15 minutes
+* ordering
+* aliasing
+* nesting
 
-* _Purpose_:
-    * learn to work with two tables (JOINS)
-      * identify a common key on which to join the tables
-      * do preprocessing to match the keys
 
 #### Exercise Set 3: 30 minutes
 
 * _Purpose_:
-    * students dig into more complex methods and have to come up with their own queries to answer questions
+    * learn to work with two tables
+      * identify a common key on which to join the tables
+      * do preprocessing to match the keys
 
 #### Geospatial Lecture: 20 minutes
 * _Content_:
