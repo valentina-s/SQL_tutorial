@@ -52,6 +52,22 @@ SELECT "census tract 2000",count(*) FROM seattlecrimeincidents
 
 -- idea of nesting and aliasing
 
+-- adding better column names
+SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
+	group by "census tract 2000"
+	ORDER BY "census tract 2000" ASC;
+
+-- extracting the max
+SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
+	group by "census tract 2000";
+
+-- 
+
+SELECT max(crimeTable.crime_count) FROM 
+(SELECT "census tract 2000" as "CensusTract",count(*) as "crime_count" FROM seattlecrimeincidents
+	group by "census tract 2000") as crimeTable
+ 
+	
 -- ----------------------------------------------------------------------------------
 
 -- Exercise 3 Practice Problem Answers:
@@ -72,3 +88,9 @@ SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as c
 	(select round("census tract 2000") as CT, count(*) as count from SeattleCrimeIncidents group by "census tract 2000") as crimeTable,
     (select "Total Population, 2010" as population,"Census Tract" as CT from census) as censusTable
     where crimeTable.CT = censusTable.CT order by "crime_rate" DESC;
+
+-- geospatial query
+
+SELECT "Offense Type", geom_utm, gid
+FROM seattlecrimeincidents
+WHERE ST_Distance(geom_utm, ST_Transform(ST_SetSRID(ST_MakePoint(-122.3072131,47.6212378),4326),3717)) <= 1000.0
