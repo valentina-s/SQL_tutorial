@@ -15,13 +15,21 @@ For need to use additional information from the census table.
 
 Now we have two tables: one with census tract and crime count and one with census tract and population.
 
+crimeTable:
+
 |census tract 2000|crime_count|
 |-----------------|-----------|
 |                 |           | 
+|                 |           |
+|                 |           |
+
+censusTable:
 
 |Census Tract|Population|
 |------------|----------|
 |            |          | 
+|            |          |
+|            |          |
 
 
 * Discuss with your neighbor how we can combine those two tables to create a new table with columns: census tract, crime_rate
@@ -29,6 +37,7 @@ Now we have two tables: one with census tract and crime count and one with censu
 |Census Tract|Crime_rate|
 |------------|----------|
 |            |          | 
+|            |          |
 |            |          |
 
 * Are there any issues you are encountering?
