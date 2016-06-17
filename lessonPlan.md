@@ -64,7 +64,7 @@
 * _Method_: 
    *  answer questions in [Exercise 2](Exercise2.md)
    
-* _Potential Challenges:
+* _Potential Challenges_:
   * there are crimes from older years
   * type of crimes may refer to all types of offenses or only summarized offenses
 
@@ -82,6 +82,13 @@
     * learn to work with two tables
       * identify a common key on which to join the tables
       * do preprocessing to match the keys
+* _Method_:
+   * go through steps in [Exercise 3](Exercise3.md) with instructors' help 
+   
+* _Challenges_:
+   * Census Tract column names do not have the same title
+   * The Census Tract values in the crime table are more refined than in the census table
+   * division of integer gives zero
 
 #### Geospatial Lecture: 20 minutes
 * _Content_:
