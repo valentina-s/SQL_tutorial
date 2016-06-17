@@ -34,7 +34,7 @@ Create the point geometry using a geographic coordinate system (SRID = 4326). Tr
    * change the symbology of the points, coloring them by a specific attribute so that the colors illustrate grouping in the data
    * add a background map "web\QuickMapServices\OSM"
    * issue the SQL query you built above to select only those points within 1 km of a point
-     * click on "database\DBmanager" and you will see the database you which you have already connected.
+     * click on "database\DBmanager" and you will see the database to which you have already connected.
      * issue a SQL query in the SQL command window (blue arrow in this screen capture):
 <img src = "images/dbmanager.png" width = 600>
    * try to make a map like this!
@@ -44,7 +44,7 @@ Create the point geometry using a geographic coordinate system (SRID = 4326). Tr
  
 #### Interfacing with the database from Python:
 
-We will use [pandas](pandas.pydata.org) which is a fantastic data analysis toolkit that happens to have some very simple methods for moving data to and from a database. The datbase connections are handled through pandas using [sqlalchemy](www.sqlalchemy.org).
+We will use [pandas](pandas.pydata.org) which is a data analysis toolkit that happens to have some very simple methods for moving data to and from a database. The datbase connections are handled through pandas using [sqlalchemy](www.sqlalchemy.org).
 
 ```Python
 import pandas as pd

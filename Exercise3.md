@@ -9,7 +9,7 @@ SELECT "census tract 2000",count(*) FROM seattlecrimeincidents group by "census 
 
 But we are interested in the crime *rate*, i.e. we want to normalize by the population of each tract.
 
-For need to use additional information from the census table.
+For this need to use additional information from the census table.
 
 * Write a query which displays the population for each tract
 
@@ -43,7 +43,7 @@ censusTable:
 * Are there any issues you are encountering?
 * How can you fix them?
 
-Let's write the final query let's write the final query 
+Let's write the final query:
 
 ```sql
 SELECT <>, <> FROM 
