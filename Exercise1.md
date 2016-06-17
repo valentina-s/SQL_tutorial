@@ -75,7 +75,7 @@ __NOTE:__ The "LIMIT" command restricts the database to return only the first 10
 For example, we can apply the count function to all the columns:
 <br><br>
 ```sql
-SELECT count(*) FROM seattlecrimeincidents LIMIT 100;
+SELECT count(*) FROM seattlecrimeincidents;
 ```
 <br><br>
 
