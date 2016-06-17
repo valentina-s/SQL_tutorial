@@ -89,6 +89,14 @@ SELECT crimeTable.CT,cast(crimeTable.count as float)/censusTable.population as c
     (select "Total Population, 2010" as population,"Census Tract" as CT from census) as censusTable
     where crimeTable.CT = censusTable.CT order by "crime_rate" DESC;
 
+-- join with a join command
+
+select crimeTable.CT,crimeTable.count::float/censusTable.population::float as crime_rate from 
+	(select round("census tract 2000") as CT, count(*) as count from SeattleCrimeIncidents group by "census tract 2000") crimeTable
+    join 
+    (select "Total Population, 2010" as population,"Census Tract" as CT from census) censusTable
+    on crimeTable.CT = censusTable.CT order by "crime_rate" DESC;
+
 -- geospatial query
 
 SELECT "Offense Type", geom_utm, gid
