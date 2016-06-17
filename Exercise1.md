@@ -72,7 +72,7 @@ __NOTE:__ The "LIMIT" command restricts the database to return only the first 10
 * the "*" is a wildcard requesting all columns from the database. 
 <br><br>
 
-We can apply the count function to all the columns:
+For example, we can apply the count function to all the columns:
 <br><br>
 ```sql
 SELECT count(*) FROM seattlecrimeincidents LIMIT 100;
