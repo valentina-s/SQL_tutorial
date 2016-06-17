@@ -83,17 +83,16 @@ This gives us the number of the rows in the table.
 
 
 ## Step 3: Practice problems
-1. Try to write a query to answer our first question from our data exploration effort with the original .csv file:
+* Try to write a query to answer our first question from our data exploration effort with the original .csv file:
 _How many "TRESPASS" offenses occurred in total?_
 Here's a hint to get you started. (substitude < > with the appropriate variable or SQL command).
 ```sql
 SELECT < > FROM seattlecrimeincidents WHERE < > = < > 
 ```
-2. Can you obtain the range of the latitude and longitude coordinates of all crimes? 
-
+* Can you obtain the range of the latitude and longitude coordinates of all crimes? 
 Hint: use "max" and "min" functions.
 
-3. Extra. Combine a few conditions together:
+* Extra. Combine a few conditions together:
 _What is the number of bike thefts in the month of january?_
 
 You can use this [cheatsheet](http://www.sql-tutorial.net/sql-cheat-sheet.pdf) to look up the different SQL commands.
