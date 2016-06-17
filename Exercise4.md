@@ -67,11 +67,25 @@ Now we can issue a query to the database as follows:
 df =pd.read_sql('SELECT * FROM seattlecrimeincidents LIMIT 100', engine)
 ```
 
-#### Interfacing with the database from R
+#### Interfacing with the database from R:
 
-We will use the R package [sqldf](https://cran.r-project.org/web/packages/sqldf/index.html).
+We will use the R package [PostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/index.html).
 
 ```R
-install.packages("sqldf")
-library(sqldf)
+install.packages("PostgreSQL")
+library(RPostgreSQL)
 ```
+
+We can execute a query in the following way:
+
+```R
+drv <- dbDriver("PostgreSQL")
+con <- d:Connect(drv, host="dssg2016.c5k9fqonks28.us-east-1.rds.amazonaws.com", user="dssg_student", password="dssg2016", dbname="dssg2016", port="5432")
+rs <- dbSendQuery(con, "select * from seattlecrimeincidents limit 100"); 
+df <- fetch(rs)
+```
+
+#### Useful Resources:
+* fiddle with SQL: [sqlfiddle](http://sqlfiddle.com/)
+* check out [SQLShare](https://sqlshare.escience.washington.edu/sqlshare/) - databases made easy (you can find SeattleCrimeIncidents and census datasets already there)
+* querying urban data sets with [Socrata Query Language (SoQL)](https://dev.socrata.com/docs/queries/)
