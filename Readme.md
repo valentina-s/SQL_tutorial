@@ -11,7 +11,7 @@
     * [Exercise 2](Exercise2.md)
     * [Exercise 3](Exercise3.md)
     * [Exercise 4](Exercise4.md)
-
+    * [Exercise 5](Exercise5.md)
 * [Exercise Solutions](exercise_queries.sql)
    
 <br>
