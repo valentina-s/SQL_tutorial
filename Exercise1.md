@@ -22,7 +22,7 @@ Start pgAdmin.
 <img src="images/toolbar.png" width = "400" border = "10">
 <br><br><br><br>
 2. fill in the connection information. 
-* The host name is: dssg2016.c5k9fqonks28.us-east-1.rds.amazonaws.com 
+* The host name is: dssg2016.csya4zsfb6y4.us-east-1.rds.amazonaws.com
 * The port is: 5432
 * The username is: dssg_student
 * The password is: dssg2016
@@ -38,7 +38,7 @@ Start pgAdmin.
 <img src="images/fullView.png" width = "600" border = "1">
 <br><br><br><br>
 5. Most of the pgadmin interface contains information on the structure of the data tables (e.g. column names), but where are the actual data? Let's take a look: 
-* Right click _Valentina, how to do this on a MAC??_ on the "seattlecrimeincidents" table, choose "View Data" and then "View Top 100 Rows" or "View Bottom 100 Rows" (Note: don't choose "View All Rows" because this will take a long time to load given the large size of the table).
+* Right click on the "seattlecrimeincidents" table, choose "View Data" and then "View Top 100 Rows" or "View Bottom 100 Rows" (Note: don't choose "View All Rows" because this will take a long time to load given the large size of the table).
 <br>
 <img src="images/viewingData.png" width = "400" border = "10">
 <br>
