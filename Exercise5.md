@@ -11,8 +11,7 @@ We will start by interfacing the crimes dataset with census tracts. For this we 
 * To accomplish this we imported this census boundary shapefile into the database and called the table "census_tracts". Connect to the database as shown in Exercise 4.
 * issue the following query:
 
-```
-SQL
+```SQL
 SELECT c2.id, c1.population, c1.popdensity, c1.vacant_housing, c2.geom FROM
 (SELECT "Census Tract"::float/100 AS CT, 
   "Total Population, 2010" AS population, 
@@ -21,7 +20,7 @@ SELECT c2.id, c1.population, c1.popdensity, c1.vacant_housing, c2.geom FROM
   FROM census_data) AS c1,
 (SELECT id, name10::float AS CT, geom FROM census_tracts) AS c2
 WHERE c1.CT = c2.CT;
-'''
+```
 
 
 
