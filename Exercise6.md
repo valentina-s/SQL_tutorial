@@ -183,3 +183,40 @@ CROSS JOIN LATERAL (  SELECT geom
                        WHERE "Offense Type" != 'THEFT-OTH'
                     ORDER BY sc1.geom <-> geom
                        LIMIT 1) sc3
+
+### Example 6 - exporting
+
+We will want a snippet of data for the next lesson. This will involve running
+an SQL query, then saving it with QGIS.
+
+#### Step 1
+In QGIS, connect to the database with the seattlecrimes dataset (if not already
+done).
+
+#### Step 2
+In QGIS, click (in menu) Database > DB manager, select the dssg2016 database,
+and open the SQL Window using File > SQL Window, clicking its icon, or hitting 'F2'.
+
+#### Step 3
+
+Input this into the SQL Query form:
+
+SELECT * FROM seattlecrimeincidents LIMIT 100;
+
+Then click 'Execute'. By default, we get back the result as a table.
+
+#### Step 4
+
+To save the query's result to a QGIS layer, check 'Load as new layer', choose
+'gid' as the 'Column with unique integer values', 'geom' as the 'Geometry Column',
+and 'first100' as the Layer name (prefix).
+
+Click 'Load now!'
+
+The should now be a new layer in your QGIS session. Note that it has not been
+saved to file yet.
+
+#### Step 5
+
+Export by right clicking on the layer ('first100'), clicking 'Save as', and
+choosing 'Format' to be GeoJSON.
