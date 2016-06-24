@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<style>
+#map {
+  height: 500px;
+}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+var map = L.map('map')
+            .setZoom(15)
+            .setView([47.653362, -122.311779]);
+var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://cartodb.com/attributions">CartoDB</a>'
+});
+map.addLayer(layer);
+</script>
+</body>
+</html>
