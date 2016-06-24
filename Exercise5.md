@@ -43,6 +43,7 @@ The ORCA team has been exploring a .csv file containing information on ORCA tran
 * choose "layer/add vector layer/add delimited text layer". Browse to the orca_transfers.csv file.
 * provide a layer name and check that the X field and Y field contain longitude and latitude columns, respectively
 * click OK to load the data into the GIS
+* suppose we want to calculate the maximum number of transfers by census tract. Use the steps described above to perform a spatial join in the GIS to accomplish this.
 
 
 
