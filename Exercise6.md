@@ -26,17 +26,17 @@ http://revenant.ca/www/postgis/workshop/indexing.html
 
 #### Question: How do I create a spatial index for a geometry column in a table?
 
-CREATE INDEX seattlecrimeincidents_gix ON seattlecrimeincidents USING GIST (geom);
+    CREATE INDEX seattlecrimeincidents_gix ON seattlecrimeincidents USING GIST (geom);
 
 ### Example 1 - closest N thefts
 
 #### Question: What is the distance between our location and the closest N thefts, using the Seattle crime dataset?
 
-SELECT ST_Distance(sc.geom, ST_SetSRID(ST_MakePoint(-122.3072131, 47.6212378), 4326))
-  FROM seattlecrimeincidents sc
- WHERE "Offense Type" = 'THEFT-OTH'
- ORDER BY sc.geom <-> ST_SetSRID(ST_MakePoint(-122.3072131, 47.6212378), 4326)
- LIMIT 5;
+    SELECT ST_Distance(sc.geom, ST_SetSRID(ST_MakePoint(-122.3072131, 47.6212378), 4326))
+      FROM seattlecrimeincidents sc
+     WHERE "Offense Type" = 'THEFT-OTH'
+     ORDER BY sc.geom <-> ST_SetSRID(ST_MakePoint(-122.3072131, 47.6212378), 4326)
+     LIMIT 5;
 
 If you've used PostGIS distance queries before, you might be wondering what's up
 with that <-> thing. That's a distance operator, roughly equivalent to
@@ -60,15 +60,15 @@ A CROSS JOIN generates the cartesian product of the two tables, so e.g.
 for T1 CROSS T2, row 1 in T1 will be compared to every row in T2, and then the
 same will happen for row 2, and so on.
 
-    SELECT sc1.*,
-           ST_Distance(sc1.geom, sc2.geom)
-      FROM (SELECT *
-              FROM seattlecrimeincidents
-             WHERE "Offense Type" = 'THEFT-OTH') sc1
-CROSS JOIN (SELECT *
-              FROM seattlecrimeincidents
-             WHERE "Offense Type" = 'TRESPASS') sc2
-     LIMIT 5
+        SELECT sc1.*,
+               ST_Distance(sc1.geom, sc2.geom)
+          FROM (SELECT *
+                  FROM seattlecrimeincidents
+                 WHERE "Offense Type" = 'THEFT-OTH') sc1
+    CROSS JOIN (SELECT *
+                  FROM seattlecrimeincidents
+                 WHERE "Offense Type" = 'TRESPASS') sc2
+         LIMIT 5
 
 Note: you would remove the last 'LIMIT 5' to get the full result. You could
 also add another 'WHERE' clause at the end to filter the result to a more
@@ -88,27 +88,27 @@ the lateral joins lets you do it on the fly.
 First, let's just look at the query we would run if there was only one trespass
 event that we cared about:
 
-// This won't run - sc1 is not defined
-  SELECT geom
-    FROM seattlecrimeincidents
-   WHERE "Offense Type" = 'TRESPASS'
-ORDER BY sc1.geom <-> geom
-   LIMIT 1
+    // This won't run - sc1 is not defined
+      SELECT geom
+        FROM seattlecrimeincidents
+       WHERE "Offense Type" = 'TRESPASS'
+    ORDER BY sc1.geom <-> geom
+       LIMIT 1
 
 This query can be turned into a subquery in a lateral join such that it runs on
 every row in sc1.
 
-            SELECT sc1.*,
-                   ST_Distance(sc1.geom, sc2.geom)
-              FROM (SELECT *
-                      FROM seattlecrimeincidents
-                     WHERE "Offense Type" = 'THEFT-OTH') sc1
-CROSS JOIN LATERAL (  SELECT geom
-                        FROM seattlecrimeincidents
-                       WHERE "Offense Type" = 'TRESPASS'
-                    ORDER BY sc1.geom <-> geom
-                       LIMIT 1) sc2
-             LIMIT 5
+                SELECT sc1.*,
+                       ST_Distance(sc1.geom, sc2.geom)
+                  FROM (SELECT *
+                          FROM seattlecrimeincidents
+                         WHERE "Offense Type" = 'THEFT-OTH') sc1
+    CROSS JOIN LATERAL (  SELECT geom
+                            FROM seattlecrimeincidents
+                           WHERE "Offense Type" = 'TRESPASS'
+                        ORDER BY sc1.geom <-> geom
+                           LIMIT 1) sc2
+                 LIMIT 5
 
 Note: you would remove the last 'LIMIT 5' to get the full result.
 
@@ -120,44 +120,44 @@ average?
 
 #### Question: What is the distance between a given trespassing event and any other crime?
 
-            SELECT sc1.*,
-                   ST_Distance(sc1.geom, sc2.geom)
-              FROM (SELECT *
-                      FROM seattlecrimeincidents
-                     WHERE "Offense Type" = 'THEFT-OTH') sc1
-CROSS JOIN LATERAL (  SELECT geom
-                        FROM seattlecrimeincidents
-                       WHERE "Offense Type" != 'THEFT-OTH'
-                    ORDER BY sc1.geom <-> geom
-                       LIMIT 1) sc2
-             LIMIT 5
+                SELECT sc1.*,
+                       ST_Distance(sc1.geom, sc2.geom)
+                  FROM (SELECT *
+                          FROM seattlecrimeincidents
+                         WHERE "Offense Type" = 'THEFT-OTH') sc1
+    CROSS JOIN LATERAL (  SELECT geom
+                            FROM seattlecrimeincidents
+                           WHERE "Offense Type" != 'THEFT-OTH'
+                        ORDER BY sc1.geom <-> geom
+                           LIMIT 1) sc2
+                 LIMIT 5
 
 ### Example 4 - Aggregation functions
 
 Aggregation functions are a useful way to summarize columsn. For example, we
 could take our previous results and compute averages:
 
-// Should be ~.003005
-            SELECT AVG(ST_Distance(sc1.geom, sc2.geom))
-              FROM (SELECT *
-                      FROM seattlecrimeincidents
-                     WHERE "Offense Type" = 'THEFT-OTH') sc1
-CROSS JOIN LATERAL (  SELECT geom
-                        FROM seattlecrimeincidents
-                       WHERE "Offense Type" = 'TRESPASS'
-                    ORDER BY sc1.geom <-> geom
-                       LIMIT 1) sc2
+    // Should be ~.003005
+                SELECT AVG(ST_Distance(sc1.geom, sc2.geom))
+                  FROM (SELECT *
+                          FROM seattlecrimeincidents
+                         WHERE "Offense Type" = 'THEFT-OTH') sc1
+    CROSS JOIN LATERAL (  SELECT geom
+                            FROM seattlecrimeincidents
+                           WHERE "Offense Type" = 'TRESPASS'
+                        ORDER BY sc1.geom <-> geom
+                           LIMIT 1) sc2
 
-// Should be ~.0001877
-            SELECT AVG(ST_Distance(sc1.geom, sc2.geom))
-              FROM (SELECT *
-                      FROM seattlecrimeincidents
-                     WHERE "Offense Type" = 'THEFT-OTH') sc1
-CROSS JOIN LATERAL (  SELECT geom
-                        FROM seattlecrimeincidents
-                       WHERE "Offense Type" != 'THEFT-OTH'
-                    ORDER BY sc1.geom <-> geom
-                       LIMIT 1) sc2
+    // Should be ~.0001877
+                SELECT AVG(ST_Distance(sc1.geom, sc2.geom))
+                  FROM (SELECT *
+                          FROM seattlecrimeincidents
+                         WHERE "Offense Type" = 'THEFT-OTH') sc1
+    CROSS JOIN LATERAL (  SELECT geom
+                            FROM seattlecrimeincidents
+                           WHERE "Offense Type" != 'THEFT-OTH'
+                        ORDER BY sc1.geom <-> geom
+                           LIMIT 1) sc2
 
 Okay, well that's pretty good. We can compute averages, but that glosses over a
 lot of details.
@@ -168,21 +168,21 @@ in the same vein: for every trespassing event, what is its closest theft and
 its closest crime in general? That will give us a dataset for which we could
 explore a distribution of phenomena, much more interesting!
 
-            SELECT sc1.*,
-                   ST_Distance(sc1.geom, sc3.geom) / NULLIF(ST_Distance(sc1.geom, sc2.geom))
-              FROM (SELECT *
-                      FROM seattlecrimeincidents
-                     WHERE "Offense Type" = 'THEFT-OTH') sc1
-CROSS JOIN LATERAL (  SELECT geom
-                        FROM seattlecrimeincidents
-                       WHERE "Offense Type" = 'TRESPASS'
-                    ORDER BY sc1.geom <-> geom
-                       LIMIT 1) sc2
-CROSS JOIN LATERAL (  SELECT geom
-                        FROM seattlecrimeincidents
-                       WHERE "Offense Type" != 'THEFT-OTH'
-                    ORDER BY sc1.geom <-> geom
-                       LIMIT 1) sc3
+                SELECT sc1.*,
+                       ST_Distance(sc1.geom, sc3.geom) / NULLIF(ST_Distance(sc1.geom, sc2.geom))
+                  FROM (SELECT *
+                          FROM seattlecrimeincidents
+                         WHERE "Offense Type" = 'THEFT-OTH') sc1
+    CROSS JOIN LATERAL (  SELECT geom
+                            FROM seattlecrimeincidents
+                           WHERE "Offense Type" = 'TRESPASS'
+                        ORDER BY sc1.geom <-> geom
+                           LIMIT 1) sc2
+    CROSS JOIN LATERAL (  SELECT geom
+                            FROM seattlecrimeincidents
+                           WHERE "Offense Type" != 'THEFT-OTH'
+                        ORDER BY sc1.geom <-> geom
+                           LIMIT 1) sc3
 
 ### Example 6 - exporting
 
@@ -201,7 +201,7 @@ and open the SQL Window using File > SQL Window, clicking its icon, or hitting '
 
 Input this into the SQL Query form:
 
-SELECT * FROM seattlecrimeincidents LIMIT 100;
+    SELECT * FROM seattlecrimeincidents LIMIT 100;
 
 Then click 'Execute'. By default, we get back the result as a table.
 
